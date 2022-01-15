@@ -24,9 +24,10 @@ show_always = true
 disabled = false
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[✗](bold bright-red)"
-vicmd_symbol = "[N](bold green) "
+success_symbol = "[I](bold 46)"
+error_symbol = "[✗](bold 196)"
+vicmd_symbol = "[N](bold 46)"
+format = "$symbol [❯](bold 39)  "
 
 [directory]
 read_only = " "
@@ -38,12 +39,14 @@ style = "99 bold"
 [kubernetes]
 disabled = false
 style = "213 bold"
-format = 'on [⛵ $symbol$context( \($namespace\))]($style) '
+format = 'on [⛵ $context( \($namespace\))]($style) '
 
 [kubernetes.context_aliases]
 "arn:aws:eks:eu-central-1:.*:cluster/staging" = "staging"
 "arn:aws:eks:eu-central-1:.*:cluster/tatooine" = "tatooine"
 "arn:aws:eks:eu-central-1:.*:cluster/production" = "production"
+"arn:aws:eks:eu-central-1:.*:cluster/bonfire" = "home-k8s"
+"arn:aws:eks:eu-central-1:.*:cluster/mug" = "mug"
 
 
 [time]

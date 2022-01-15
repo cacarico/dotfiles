@@ -29,16 +29,26 @@ Extra stuff I have installed:
 * libmagic
 * jump
 * starship
+* ttyrec
+* ttygif
+* neofetch
+* helmfile
 
 ```
-brew install spotify-tui pre-commit ipcalc ghq bat viu ghostscript imagemagick poppler libmagic jump libx11 starship
+brew install spotify-tui pre-commit ipcalc ghq bat viu ghostscript imagemagick poppler libmagic jump libx11 starship ttyrec ttygif neofetch helmfile
 ```
 
 Pip stuff:
 * rainbowstream
 
 ```
-pip install rainbowstream
+pip install rainbowstream pynvim
+```
+
+Npm stuff
+
+```
+sudo npm install gtop -g
 ```
 
 ## Installation

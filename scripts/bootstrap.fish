@@ -27,6 +27,7 @@ function create_links
   end
 
   ln -sF $CONFIG_DIR/tmux.conf $HOME/.tmux.conf
+  ln -sF $CONFIG_DIR/k9s.yaml $HOME_CONFIG_DIR/k9s/config.yaml
   ln -sF $CONFIG_DIR/starship.toml $HOME_CONFIG_DIR/starship.toml
   ln -sF $CONFIG_DIR/alacritty.yml $HOME_CONFIG_DIR/alacritty/alacritty.yml
   ln -sF $CONFIG_DIR/nvim/init.vim $HOME_CONFIG_DIR/nvim/init.vim

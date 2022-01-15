@@ -7,4 +7,4 @@ font:
     style: Bold
 window:
   decorations: buttonless
-background_opacity: 0.75
+background_opacity: 0.85
