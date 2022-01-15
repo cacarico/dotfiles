@@ -9,9 +9,14 @@ export EDITOR=nvim
 # PATHS -----------------------
 # -----------------------------
 set PATH $PATH:$HOME/.cargo/bin
-set PATH $PATH:$HOME/go/bin
 
 set -x STARSHIP_CONFIG $HOME/.config/starship.toml
+
+set -x K9SCONFIG $HOME/.config/k9s
+
+set -x GOPATH $HOME/go
+set -x PATH $PATH $GOPATH/bin
+set -x GOBIN $GOPATH/bin
 
 # -----------------------------
 # Abbreviations ---------------
@@ -60,6 +65,11 @@ end
 
 source ~/.config/fish/conf.d/*
 source ~/.config/fish/functions/*
+
+fish_add_path /usr/local/opt/llvm/bin
+
+set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
 
 # Load .env files, https://github.com/direnv/direnv
 direnv hook fish | source
