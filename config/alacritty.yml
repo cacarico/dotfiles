@@ -1,10 +1,10 @@
 font:
   # The normal (roman) font face to use.
   normal:
-    family: "FiraCode Nerd Font"
+    family: "Fira Code"
     #family: "Hack Nerd Font"
     # Style can be specified to pick a specific face.
     style: Bold
 window:
   decorations: buttonless
-background_opacity: 0.75
+  opacity: 0.75

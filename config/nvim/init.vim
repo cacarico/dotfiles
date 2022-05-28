@@ -114,7 +114,7 @@ call plug#begin('~/.vim/plugged')
 
   " Plug 'rust-lang/rust.vim'
   Plug 'scrooloose/syntastic'
-  Plug 'neoclide/coc.nvim', {'br:CocInstall coc-json coc-tsserveranch': 'release'}
+  " Plug 'neoclide/coc.nvim', {'br:CocInstall coc-json coc-tsserveranch': 'release'}
   Plug 'hashivim/vim-terraform'
   Plug 'vim-airline/vim-airline'
   Plug 'dracula/vim', { 'name': 'dracula' }
