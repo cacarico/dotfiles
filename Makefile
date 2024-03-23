@@ -1,4 +1,4 @@
-install: link package_install ## Creates links and install packages
+install: link link-x package_install ## Creates links and install packages
 
 link: ## Create symlinks
 	@scripts/bootstrap.sh create_links
@@ -12,7 +12,7 @@ package_install: ## Install Arch Linux Packages
 unlink: ## Delete symlinks
 	@scripts/bootstrap.sh remove_links
 
-.PHONY: help install link package_install unlink
+.PHONY: help install link link-x package_install unlink
 
 help: ## This help.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
