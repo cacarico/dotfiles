@@ -4,7 +4,7 @@
 -- when the battery reaches certain thresholds. It uses LuaSocket (if available)
 -- for more accurate sleeping and luaposix (if available) to handle SIGINT gracefully.
 --
--- @author sunmenko
+-- @author cacarico
 -- @module battery_monitor
 
 -- ============================================================================
