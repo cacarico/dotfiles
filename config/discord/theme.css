@@ -1,0 +1,89 @@
+/*
+   TRANSPARENT DISCORD THEME (BASIC EXAMPLE)
+   -----------------------------------------
+   Save this as a .theme.css file and place it in your BetterDiscord themes folder.
+   Then activate it in your BetterDiscord settings.
+*/
+
+/*
+   1) Global background variables
+   These override Discord’s default CSS variables to make backgrounds transparent or semi-transparent.
+*/
+:root {
+  --background-primary: rgba(38, 14, 46, 0.151);        /* Main areas */
+  --background-secondary: rgb(12, 6, 17);      /* Secondary panels */
+  --background-tertiary: rgb(7, 4, 4);       /* Popouts, smaller panels */
+  --deprecated-panel-background: rgba(181, 121, 211, 0); /* Legacy fallback */
+}
+
+/*
+   2) Main app container
+   This ensures the main content area is somewhat see-through.
+*/
+.appMount-3lHmkl {
+  background: rgba(0,0,0,0.15) !important;
+  backdrop-filter: blur(8px);
+}
+
+/*
+   3) Chat list, server list, and member list
+   We make them semi-transparent but use a blur effect to remain readable.
+*/
+.guildsWrapper-5TJh6A,
+.channels-Ie2l6A,
+.membersWrap-2h-GB4 {
+  background-color: rgba(90, 32, 32, 0.2) !important;
+  backdrop-filter: blur(8px);
+}
+
+/*
+   4) Chat text area
+   Make the text area background transparent with a subtle blur.
+*/
+.textArea-2Spzkt {
+  background-color: rgba(135, 37, 201, 0.15) !important;
+  backdrop-filter: blur(6px);
+}
+
+/*
+   5) Popouts, modals, and context menus
+   Sometimes Discord uses separate background tokens or classes for these.
+   You can tweak the transparency and blur radius if it’s too light or dark.
+*/
+.callout-1pVE1O,
+.popout-3sVMXz,
+.contextMenu-uoJTbz,
+.modal-2cCet-,
+.layer-v9HyYc {
+  background-color: rgba(0,0,0,0.4) !important;
+  backdrop-filter: blur(10px) saturate(1.2);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/*
+   6) Scrollbars
+   Make scrollbars transparent or minimal.
+*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.0);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+/*
+   7) Optional text color adjustments
+   If your background is too light, darken or lighten text colors.
+*/
+.theme-dark {
+  --text-normal: #ffffff;
+  --text-muted: rgba(255,255,255,0.7);
+  --channels-default: #ffffff;
+  --interactive-normal: rgba(255,255,255,0.6);
+  --interactive-hover: rgba(255,255,255,0.75);
+}

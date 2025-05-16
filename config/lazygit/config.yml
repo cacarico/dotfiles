@@ -1,0 +1,41 @@
+# -----------------------------------------------------------------------------
+# Name        : Caio Quinilato Teixeira
+# Email       : caio.quinilato@gmail.com
+# Repository  : https://github.com/github/dotfiles
+# Description : Lazygit configuration File
+# -----------------------------------------------------------------------------
+
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+#+++++ Sets up Vim Mode +++++#
+keybinding:
+  universal:
+    nextScreenMode: "="
+    prevScreenMode: "-"
+
+#+++++ GUI and Theme Configuration +++++#
+gui:
+  nerdFontsVersion: ""
+  # Theme Macchiato
+  theme:
+    activeBorderColor:
+      - '#8aadf4'
+      - bold
+    inactiveBorderColor:
+      - '#a5adcb'
+    optionsTextColor:
+      - '#8aadf4'
+    selectedLineBgColor:
+      - '#363a4f'
+    selectedRangeBgColor:
+      - '#363a4f'
+    cherryPickedCommitBgColor:
+      - '#494d64'
+    cherryPickedCommitFgColor:
+      - '#8aadf4'
+    unstagedChangesColor:
+      - '#ed8796'
+    defaultFgColor:
+      - '#cad3f5'
+    searchingActiveBorderColor:
+      - '#eed49f'

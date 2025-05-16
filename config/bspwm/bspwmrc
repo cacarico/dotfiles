@@ -1,0 +1,85 @@
+#!/usr/bin/env fish
+
+# Starts sxhkd and picom
+pgrep -x sxhkd > /dev/null; or sxhkd &
+pgrep -x picom > /dev/null; or picom --experimental-backends -b &
+
+# Starts polybar
+$HOME/.config/polybar/launch.fish
+
+# Set wallpaper
+feh --bg-fill ~/Pictures/desktop-2.jpg
+
+# Configure Windows
+bspc config border_width 2
+bspc config window_gap 8
+bspc config split_ratio 0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle false
+
+# Set floating windows
+bspc rule -a Pavucontrol state=floating center=true
+bspc rule -a 1Password state=floating center=true
+bspc rule -a /usr/bin/blueman-manager state=floating center=true
+
+# Set Monitors
+switch (autorandr --current)
+    case 'think-solo'
+        bspc monitor eDP -d 1 2 3 4
+    case 'think-home-2'
+        bspc monitor DisplayPort-1 1 2
+        bspc monitor HDMI-A-0 -d 3 4
+        bspc monitor eDP -d 5
+    case 'carbon-solo'
+        bspc monitor eDP-1 -d 1 2 3 4
+    case 'carbon-home-1'
+        bspc monitor DP-3 -d 1 2
+        bspc monitor HDMI-1 -d 3 4
+    case 'carbon-home-2'
+        bspc monitor DP-3 -d 1 2
+        bspc monitor HDMI-1 -d 3 4
+        bspc monitor eDP-1 -d 5
+    case 'carbon-office-2'
+        bspc monitor DP-3 -d 1 2
+        bspc monitor HDMI-1 -d 3 4
+        bspc monitor eDP-1 -d 5
+    case '*'
+        exit 1
+end
+
+# For now using theme here until fix
+bspc config active_border_color "#393c9e"
+# bspc config normal_border_color "#393c9e"
+bspc config normal_border_color "#6272a4"
+# bspc config focused_border_color "#25a5be"
+bspc config focused_border_color "#52399e"
+bspc config presel_feedback_color "#ffb86c"
+
+###########################################
+##            Functions
+###########################################
+
+# Fix
+function change_theme -a theme
+    switch $theme
+        case 'dracula'
+            bspc config active_border_color "#bd93f9"
+            bspc config normal_border_color "#44475a"
+            bspc config focused_border_color "#824FA0"
+            bspc config presel_feedback_color "#6272a4"
+        case 'catppuccin'
+            echo cat
+            bspc config active_border_color "#bd93f9"
+            bspc config normal_border_color "#6272a4"
+            bspc config focused_border_color "#ffb86c"
+            bspc config presel_feedback_color "#ffb86c"
+        case 'gruvbox'
+            bspc config active_border_color "#d3869b"
+            bspc config normal_border_color "#2c3836"
+            bspc config focused_border_color "#d5c4a1"
+            bspc config presel_feedback_color "#8f3f71"
+        case '*'
+            echo "Error: Unknown color scheme"
+            exit 1
+    end
+end

@@ -1,0 +1,16 @@
+# -----------------------------------------------------------------------------
+# Name        : Caio Quinilato Teixeira
+# Email       : caio.quinilato@gmail.com
+# Repository  : https://github.com/github/dotfiles
+# Description : Configuration file for GDU (go DiskUsage)
+# -----------------------------------------------------------------------------
+
+#+++++ Enable Vim-like movement and custom keys for actions +++++#
+[Keybindings]
+MoveUp = 107           # k
+MoveDown = 106         # j
+MoveLeft = 104         # h
+MoveRight = 108        # l
+Quit = 113             # q
+GoBack = 98            # b
+OpenFolder = 111       # o

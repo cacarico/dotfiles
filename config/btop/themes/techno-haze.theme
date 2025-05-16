@@ -1,0 +1,79 @@
+# Custom Theme: Refined Phoenix Night
+# Using your palette:
+#   Purple:      #792EC0
+#   Pink:        #f274bd
+#   Deep Purple: #9f28b5
+#   Dark Accent: #731da0
+#   Magenta:     #db2a90
+#   Soft Magenta:#d3539c
+# Plus red for danger: #ff0000
+
+# Main Colors
+theme[main_bg]="#1a1b26"       ; Dark background for contrast
+theme[main_fg]="#f274bd"       ; Primary text (pink)
+theme[title]="#f274bd"         ; Titles, box headers
+
+theme[hi_fg]="#9f28b5"         ; Keyboard shortcut highlights (deep purple)
+
+# Selection colors for the processes box
+theme[selected_bg]="#731da0"   ; Selected background (dark accent)
+theme[selected_fg]="#f274bd"   ; Selected text (pink)
+
+# Inactive/disabled text
+theme[inactive_fg]="#9f28b5"   ; A softer deep purple
+
+# Miscellaneous elements (graphs, mini CPU bars, details)
+theme[proc_misc]="#db2a90"     ; Accent for graph details (magenta)
+
+# Box outlines and dividers
+theme[cpu_box]="#792EC0"       ; Outlines using the base purple
+theme[mem_box]="#792EC0"
+theme[net_box]="#792EC0"
+theme[proc_box]="#792EC0"
+theme[div_line]="#792EC0"
+
+# Temperature Graph Colors (using red for danger)
+theme[temp_start]="#792EC0"    ; Low (safe) – purple
+theme[temp_mid]="#f274bd"      ; Moderate – pink
+theme[temp_end]="#ff0000"      ; Danger – red
+
+# CPU Graph Colors
+theme[cpu_start]="#792EC0"
+theme[cpu_mid]="#9f28b5"
+theme[cpu_end]="#ff0000"       ; Red to signal high usage/danger
+
+# Memory/Disk Free Meter
+# (Here, more free memory is safe so we flip the gradient)
+theme[free_start]="#ff0000"    ; Low free (danger)
+theme[free_mid]="#9f28b5"
+theme[free_end]="#792EC0"      ; High free (safe)
+
+# Memory/Disk Cached Meter
+theme[cached_start]="#792EC0"
+theme[cached_mid]="#9f28b5"
+theme[cached_end]="#ff0000"    ; Danger indicator at high usage
+
+# Memory/Disk Available Meter
+theme[available_start]="#ff0000"  ; Low available (danger)
+theme[available_mid]="#9f28b5"
+theme[available_end]="#792EC0"    ; High available (safe)
+
+# Memory/Disk Used Meter
+theme[used_start]="#792EC0"
+theme[used_mid]="#9f28b5"
+theme[used_end]="#ff0000"         ; High usage/danger
+
+# Download Graph Colors
+theme[download_start]="#792EC0"
+theme[download_mid]="#f274bd"
+theme[download_end]="#ff0000"       ; Red for spikes/danger
+
+# Upload Graph Colors
+theme[upload_start]="#792EC0"
+theme[upload_mid]="#f274bd"
+theme[upload_end]="#ff0000"         ; Red for danger
+
+# Process Box Gradient for threads, memory, and CPU usage
+theme[process_start]="#db2a90"  ; Starting with magenta
+theme[process_mid]="#d3539c"    ; Transition to soft magenta
+theme[process_end]="#ff0000"     ; Ending in red to denote critical levels

@@ -1,0 +1,17 @@
+-- Requires Love2D Framework
+function love.load()
+    local rate = 44100
+    local duration = 2 -- seconds
+    local frequency = 261.63 -- C minor
+
+    local soundData = love.sound.newSoundData(duration * rate, rate, 16, 2)
+
+    for i = 0, duration * rate - 1 do
+        local sample = math.sin(2 * math.pi * frequency * (i / rate))
+        soundData:setSample(i, 0, 0)          -- Left ear (silent)
+        soundData:setSample(i, 1, sample)     -- Right ear (tone)
+    end
+
+    source = love.audio.newSource(soundData, "static")
+    source:play()
+end

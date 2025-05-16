@@ -1,0 +1,26 @@
+global:
+  - name: ruby
+    versions: latest
+  - name: golang
+    versions: latest
+  - name: helm
+    versions: latest
+  - name: k9s
+    versions: latest
+  - name: kubectl
+    versions: latest
+  - name: nodejs
+    versions:
+      - latest
+  - name: terraform
+    versions: latest
+  - name: terragrunt
+    versions:
+    - latest
+    - 0.21.9
+  - name: minikube
+    versions: latest
+  - name: awscli
+    versions: latest
+  - name: aws-vault
+    versions: latest

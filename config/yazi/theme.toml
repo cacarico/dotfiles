@@ -1,0 +1,3 @@
+# NOTE: Don't forget to add the flavors clone to installation and update
+[flavor]
+dark = "dracula"

@@ -1,0 +1,37 @@
+# -----------------------------------------------------------------------------
+# Name        : Caio Quinilato Teixeira
+# Email       : caio.quinilato@gmail.com
+# Repository  : https://github.com/github/dotfiles
+# Description : Zathura configuration file
+# -----------------------------------------------------------------------------
+
+###########
+# Keymaps #
+###########
+set selection-clipboard "clipboard"
+
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map = zoom in
+map + zoom
+map i toggle_index
+
+###############
+# UI Settings #
+###############
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+
+set window-title-basename "true"
+set statusbar-basename "true"
+set adjust-open width
+
+set highlight-color             rgba(160,73,242,0.2)  # Purple
+set recolor-lightcolor          rgba(0,0,0,0)      # Background
+set recolor-darkcolor           rgba(219,42,144,0.9) # Same as waybar
+set recolor-keephue    true
+set recolor true
+set guioptions                  ""

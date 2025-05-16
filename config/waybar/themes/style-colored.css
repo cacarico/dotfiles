@@ -1,0 +1,89 @@
+/*
+# -----------------------------------------------------------------------------
+# Name        : Caio Quinilato Teixeira
+# Email       : caio.quinilato@gmail.com
+# Repository  : https://github.com/github/dotfiles
+# Description : Waybar css
+# -----------------------------------------------------------------------------
+*/
+* {
+	border: none;
+	border-radius: 10;
+  font-family: "GoMonoNerdFontMono" ;
+  /* font-family: "FiraMonoNerdFontMono" ; */
+  font-family: "Noto Emoji Mono" ;
+	font-size: 13px;
+	min-height: 18px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+.module {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+}
+
+#network {
+	color: #161320;
+	background: #bd93f9;
+}
+
+#pulseaudio {
+	color: #1A1826;
+	background: #FAE3B0;
+}
+
+#backlight {
+	color: #161320;
+	background: #F8BD96;
+}
+
+#clock {
+	color: #161320;
+	background: #ABE9B3;
+}
+
+#memory {
+	color: #161320;
+	background: #DDB6F2;
+}
+#cpu {
+	color: #161320;
+	background: #96CDFB;
+}
+
+#tray {
+	color: #B5E8E0;
+	background: #161320;
+}
+
+#custom-updates {
+	color: #161320;
+	background: #E8A2AF;
+}
+
+#workspaces {
+	color: #161320;
+	background: #DDB6F2;
+}
+
+#bluetooth {
+	color: #161320;
+	background: #DDB6F2;
+}
+
+#upower {
+	color: #161320;
+	background: #B5E8E0;
+}

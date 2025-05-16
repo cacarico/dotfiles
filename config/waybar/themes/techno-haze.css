@@ -1,0 +1,75 @@
+/*
+# -----------------------------------------------------------------------------
+# Name        : Caio Quinilato Teixeira
+# Email       : caio.quinilato@gmail.com
+# Repository  : https://github.com/github/dotfiles
+# Description : Waybar css
+# -----------------------------------------------------------------------------
+ */
+
+/*base background color*/
+@define-color bg_main rgba(25, 25, 25, 0.65);
+/* @define-color font_color   #9f28b5; */
+@define-color active_color   #792EC0;
+/* @define-color font_color  #731da0; */
+@define-color font_color   #db2a90;
+/* @define-color font_color    #d3539c; */
+
+* {
+  border: none;
+  border-radius: 5px;
+  /* font-family: "GoMonoNerdFont"; */
+  /* font-family: "FiraMonoNerdFontMono" ; */
+  /* font-family: "Noto Emoji Mono" ; */
+  font-size: 14px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+.module {
+  /* background: @bg_main; */
+  /* margin-top: 6px; */
+  /* margin-bottom: 6px; */
+  /* margin-left: 2px; */
+  /* margin-right: 2px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+  transition: none;
+  color:  @font_color;
+}
+
+#workspaces {
+  margin-left: 3px;
+}
+
+#upower {
+  margin-right: 3px;
+}
+
+#workspaces button {
+  padding-left: 3px;
+  color: @font_color;
+}
+
+#custom-separator {
+  color: @active_color
+}
+
+#custom-mpseparator {
+  color: @active_color
+}
+
+#workspaces button {
+  color: @font_color;
+}
+
+#workspaces button.active {
+  color: @active_color;
+}

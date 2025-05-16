@@ -1,0 +1,9 @@
+[Unit]
+Description=Battery Notifier Service
+
+[Service]
+ExecStart=%h/ghq/github.com/cacarico/dotfiles-pvt/scripts/battery-notifier/battery.lua
+Restart=always
+
+[Install]
+WantedBy=default.target

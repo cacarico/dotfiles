@@ -1,0 +1,14 @@
+global:
+  - 1password
+  - asdf-vm
+  - autojump
+  - brillo
+  - dracula-gtk-theme
+  - fish-lsp
+  - jqp-bin
+  - lazydocker
+  - mkinitcpio-numlock
+  - nordvpn-bin
+  - spotify-tui
+  - swaylock-effects-git
+  - ueberzugpp

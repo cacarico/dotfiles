@@ -1,0 +1,16 @@
+---
+k9s:
+  liveViewAutoRefresh: false
+  refreshRate: 2
+  maxConnRetry: 5
+  readOnly: false
+  noExitOnCtrlC: false
+  ui:
+    # skin: catppuccin-macchiato-transparent
+    skin: techno-haze
+    enableMouse: true
+    headless: false
+    logoless: false
+    crumbsless: false
+    reactive: false
+    noIcons: false

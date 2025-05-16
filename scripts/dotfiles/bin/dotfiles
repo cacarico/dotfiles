@@ -1,0 +1,50 @@
+#!/usr/bin/env lua
+
+-- Main function encapsulating CLI logic
+local function main()
+	local source = debug.getinfo(1, "S").source:sub(2)
+	local script_path = source:match("(.*/)")
+	if not script_path then
+		script_path = "./"
+	end
+
+	package.path = package.path .. ";" .. script_path .. "../?.lua"
+
+	local arch = require("bootstrap.arch")
+	local argparse = require("argparse")
+
+	-- Initialize argument parser
+	local parser = argparse("dotfiles", "Cli to manage my Dotfiles and OS")
+
+	local update = parser:command("update u", "Updates the system")
+	update:flag("-y --noconfirm", "Updates without asking for confirmation")
+
+	local install = parser:command("install i", "Install all packages to the system")
+	install:flag("-y --noconfirm", "Install packages without asking for confirmation")
+
+	parser:command("bootstrap b", "Runs the bootstrap installation")
+
+	local args = parser:parse()
+
+	if args.update then
+		arch.update_pacman(args.noconfirm)
+		arch.update_yay(args.noconfirm)
+	end
+
+	if args.install then
+		arch.install_pacman(args.noconfirm)
+		arch.install_yay(args.noconfirm)
+	end
+
+	if args.bootstrap then
+    require("bootstrap.setup").install_system()
+	end
+end
+
+-- Execute main function within a protected call to handle unforeseen errors
+local status, err = pcall(main)
+if not status then
+	print("An unexpected error occurred:")
+	print(err)
+	os.exit(1)
+end

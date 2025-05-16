@@ -1,0 +1,8 @@
+theme:
+  name: dracula
+  styleOverrides:
+    primary: "#bd93f9"   # Dracula Purple
+    secondary: "#ff79c6" # Dracula Pink
+    error: "#ff5555"    # Dracula Red
+    inactive: "#6272a4" # Often used for 'comment' text in Dracula
+    success: "#50fa7b"  # Dracula Green

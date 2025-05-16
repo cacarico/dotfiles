@@ -1,0 +1,180 @@
+/* -------------------------
+   Custom Firefox Layout:
+   - URL Bar on the left
+   - Tabs in the center (expanding)
+   - Hamburger menu on the far right
+------------------------- */
+:root {
+  --default-text-color: rgb(219, 42, 144);
+  --separator-color: rgb(59, 59, 185);
+  --blur-bg-color: rgba(135, 43, 168, 0.05);
+  --blur-bg-color-strong: rgba(135, 43, 168, 0.1);
+  --blur-effect: blur(10px);
+  --blur-effect-strong: blur(50px);
+  --selected-tab-bg-color: rgba(135, 43, 168, 0.35);
+}
+
+/* Chrome separator */
+#navigator-toolbox::after {
+  border-bottom: 1px solid var(--separator-color) !important;
+}
+
+/* Global text color */
+* {
+  color: var(--default-text-color) !important;
+}
+
+/* Main window separator override */
+#main-window {
+  --chrome-content-separator-color: var(--separator-color) !important;
+}
+
+/* Apply transparent blur to key UI elements */
+#navigator-toolbox,
+#titlebar,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#browser,
+#sidebar-box,
+#urlbar,
+#searchbar,
+#urlbar-container,
+#urlbarView,
+panel,
+#sidebar {
+  background-color: var(--blur-bg-color) !important;
+  backdrop-filter: var(--blur-effect) !important;
+}
+
+#urlbar-background {
+  background-color: var(--blur-bg-color-strong) !important;
+  backdrop-filter: var(--blur-effect-strong) !important;
+}
+
+/* Transparent sidebar background */
+#sidebar-box {
+  background-color: var(--blur-bg-color) !important;
+  backdrop-filter: var(--blur-effect) !important;
+}
+
+/* Selected tab styling */
+.tab-background:is([selected], [multiselected]) {
+  background-color: var(--selected-tab-bg-color) !important;
+  box-shadow: var(--tab-selected-shadow) !important;
+  outline-color: var(--tab-selected-outline-color) !important;
+}
+
+/* -------------------------
+   Layout: URL Bar, Tabs, and Hamburger
+------------------------- */
+
+/* Make #navigator-toolbox a flex container with horizontal layout */
+#navigator-toolbox {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important; /* Distributes items properly */
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+/* URL Bar (#nav-bar) on the left */
+#nav-bar {
+  border-top: none !important;
+  box-shadow: none !important;
+  order: 1 !important;
+  max-width: 400px !important; /* Adjust width as needed */
+  min-width: 150px !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Tabs toolbar takes up remaining space in the middle */
+#TabsToolbar {
+  order: 2 !important;
+  flex-grow: 1 !important; /* Allows it to fill space */
+  display: flex !important;
+  justify-content: center !important; /* Center align tabs */
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+}
+
+/* Hamburger button on the far right */
+#PanelUI-button,
+#PanelUI-menu-button {
+  order: 3 !important;
+  margin-left: auto !important; /* Ensures it moves to the far right */
+  align-self: center !important;
+}
+
+/* -------------------------
+   Hide Unwanted UI Elements
+------------------------- */
+#toolbar-menubar,
+#PersonalToolbar,
+#titlebar,
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button,
+#home-button,
+#library-button,
+#sidebar-button,
+#firefox-view-button,
+#unified-extensions-button,
+#alltabs-button,
+#titlebar-button,
+#tabs-newtab-button,
+.urlbar-history-dropmarker,
+toolbarspring,
+toolbarspacer {
+  display: none !important;
+}
+
+/* Hide the close button by its classes */
+toolbarbutton.titlebar-button.titlebar-close {
+  display: none !important;
+}
+
+/* Alternatively, hide by command attribute (if you prefer) */
+toolbarbutton[command="cmd_closeWindow"] {
+  display: none !important;
+}
+
+/* Hide all toolbar buttons on the top-level toolbars except the hamburger */
+#navigator-toolbox > toolbarpaletteitem > toolbarbutton:not(#PanelUI-button):not(#PanelUI-menu-button),
+#nav-bar > toolbarbutton:not(#PanelUI-button):not(#PanelUI-menu-button),
+#TabsToolbar > toolbarbutton:not(#PanelUI-button):not(#PanelUI-menu-button) {
+  display: none !important;
+}
+
+/* But do NOT hide the items inside the hamburger popup */
+#PanelUI-popup toolbarbutton {
+  display: -moz-box !important; /* or display: flex !important; */
+}
+
+/* -------------------------
+   Compact Tabs & URL Bar Styling
+------------------------- */
+.tabbrowser-tab {
+  min-height: 28px !important;
+  min-width: 80px !important;
+  padding: 0 6px !important;
+}
+
+#urlbar-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#urlbar {
+  margin: 2px 4px !important;
+  padding: 2px 6px !important;
+}

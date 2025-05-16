@@ -1,0 +1,30 @@
+[git_status]
+style = '#ff42af'
+conflicted = '☣️ '
+ahead = '🚀'
+behind = '🐬'
+# behind = '⛑️'
+diverged = '😵'
+# up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = ' 🦄'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+[git_branch]
+style = '#ff42af'
+
+[directory]
+style = '#792EC0'
+# home_symbol =  "🏠"
+
+[kubernetes]
+# format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+format = ' [⛵ $cluster \($namespace\)](bold green) '
+disabled = false
+detect_env_vars = [ "K8S_CONTEXT" ]
+# contexts = [
+#   { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+# ]

@@ -1,0 +1,142 @@
+/*
+# -----------------------------------------------------------------------------
+# Name        : Caio Quinilato Teixeira
+# Email       : caio.quinilato@gmail.com
+# Repository  : https://github.com/github/dotfiles
+# Description : Waybar configuration
+# -----------------------------------------------------------------------------
+*/
+{
+  // Waybar Configuration
+  "layer": "top",
+  "output": [
+    // "HDMI-A-1",
+    "eDP-1"
+    // "DP-1"
+    // "DP-2"
+  ],
+  "reload_style_on_change": true,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/mediaplayer",
+    "custom/mpseparator",
+    "network",
+    "custom/separator",
+    "hyprland/language",
+    "custom/separator",
+    "backlight",
+    "custom/separator",
+    "pulseaudio",
+    "custom/separator",
+    "bluetooth",
+    "custom/separator",
+    "upower"
+  ],
+  // Modules Configuration
+  "upower": {
+    "icon-size": 15,
+    "hide-if-empty": true,
+    "tooltip": true,
+    "tooltip-spacing": 20
+  },
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "{icon} muted",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "format-icons": {
+      "default": ["", " ", "  "]
+    }
+  },
+  "network": {
+    "tooltip": false,
+    "hide-if-empty": false,
+    "format-wifi": " {essid}",
+    "format-ethernet": "",
+    "on-click": "alacritty -T floating_nmtui -e nmtui"
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": " {}%",
+    "interval": 1,
+    "on-scroll-up": "brillo -A 10",
+    "on-scroll-down": "brillo -U 10"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:%H:%M}"
+  },
+  "custom/updates": {
+    "format": "{} Update(s)",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+    "interval": 15
+  },
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "sort-by": "number",
+    "active-only": false,
+    "all-outputs": true,
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "6": "",
+      // "active": "",
+      "default": ""
+    }
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-pt": "br",
+    "on-click": "hyprctl devices | grep English && hyprctl keyword input:kb_layout br || hyprctl keyword input:kb_layout us"
+},
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": " {status}",
+    "format-disabled": " off", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\\t{controller_address}\\n\\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\\t{device_address}",
+    "on-click": "bluetoothctl show | grep Powered | grep yes && bluetoothctl power off || bluetoothctl power on",
+    "on-click-right": "blueman-manager",
+    "on-scroll-up": "bluetoothctl connect E8:EE:CC:DB:C1:59",
+    "on-scroll-down": "bluetoothctl disconnect E8:EE:CC:DB:C1:59"
+  },
+  "custom/mediaplayer": {
+    "exec": "python ~/ghq/github.com/cacarico/dotfiles-pvt/config/waybar/scripts/mediaplayer.py",
+    // "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    // "max-length": 10,
+    "on-scroll-down": "playerctl previous"
+},
+  "custom/mpseparator": {
+    "exec": "python ~/ghq/github.com/cacarico/dotfiles-pvt/config/waybar/scripts/mediaplayer.py",
+    "format": "|",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+},
+  "custom/separator": {
+    "exec": "echo '|'",
+    "interval": "once",
+    "format": "{}"
+  }
+}

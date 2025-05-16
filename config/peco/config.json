@@ -1,0 +1,10 @@
+{
+    "Keymap": {
+        "C-p": "peco.SelectPrevious",
+        "C-n": "peco.SelectNext"
+    },
+    "InitialIndex": 0,
+    "InitialFilter": null,
+    "Layout": "bottom-up",
+    "Prompt": "Search:"
+}
